@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shivani Chenumalla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bg.jpg') no-repeat center center fixed; /* Replace with your background image */
+            background-size: cover;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        /* Sliding text at top-left */
+        .sliding-header {
+            position: absolute;
+            top: 20px;
+            left: -300px; /* Start position outside of view */
+            font-size: 1.8em;
+            font-weight: bold;
+            color: darkblue;
+            animation: slideIn 3s ease-in-out forwards; /* Sliding animation */
+        }
+
+        @keyframes slideIn {
+            0% {
+                left: -300px; /* Start from offscreen */
+            }
+            100% {
+                left: 20px; /* Final position */
+            }
+        }
+
+        .main-box {
+    position: absolute; /* Position relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the box dimensions */
+    margin: 0; /* Remove default margins */
+    padding: 30px;
+    max-width: 900px;
+    background: linear-gradient(45deg, lightcyan, skyblue, aquamarine); /* Light gradient colors */
+    background-size: 300% 300%;
+    animation: radiantEffect 8s ease-in-out infinite;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+}
+
+        /* Radiant gradient animation */
+        @keyframes radiantEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .photo-container {
+            margin: 20px 0;
+        }
+
+        .photo-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid darkblue;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .tabs div {
+            padding: 15px 25px;
+            background-color: #0077bb;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: transform 0.5s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabs div:hover {
+            background-color: #005999;
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        footer {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sliding Header -->
+    <div class="sliding-header">
+        Hello, I'm Shivani Chenumalla
+    </div>
+
+    <div class="main-box">
+        <div class="photo-container">
+            <img src="prof.jpeg" alt="Shivani's Photo"> <!-- Replace with your profile photo -->
+        </div>
+        <div class="tabs">
+            <div onclick="showContent('projects')">Projects</div>
+            <div onclick="showContent('hire-me')">Hire Me</div>
+            <div onclick="showContent('resume')">Resume</div>
+            <div onclick="showContent('education')">Education</div>
+            <div onclick="showContent('skills')">Skills</div>
+            <div onclick="showContent('certifications')">Certifications</div>
+            <div onclick="showContent('contact-me')">Contact Me</div>
+        </div>
+
+      <div id="projects" class="content">
+    <h2>Projects</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
+        <!-- Vegetable Classification Project with Light Blue Background Box -->
+        <div style="background-color: rgba(173, 216, 230, 0.6); padding: 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); max-width: 800px; width: 100%; text-align: center;">
+            <h3>Vegetable Classification</h3>
+            <img src="veggie.jpg" alt="Vegetable Classification Project" 
+                 style="width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-bottom: 15px;">
+            <p>A machine learning project that classifies various types of vegetables using image data.</p>
+            <a href="https://github.com/shivanich92/aimlproject2024" target="_blank" 
+               style="text-decoration: none;">
+                <button style="padding: 10px 20px; background-color: #0077bb; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                    View on GitHub
+                </button>
+            </a>
+        </div>
+
+        <!-- Audio Classification Project with Light Blue Background Box -->
+        <div style="background-color: rgba(173, 216, 230, 0.6); padding: 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); max-width: 800px; width: 100%; text-align: center;">
+            <h3>Audio Classification</h3>
+            <img src="C:\Users\Shivani\Desktop\portfolio\audio.png" alt="Audio Classification Project" 
+                 style="width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-bottom: 15px;">
+            <p>A machine learning project for classifying audio files into different categories based on sound features.</p>
+            <a href="https://github.com/shivanich92/GENAIPROJECT" target="_blank" 
+               style="text-decoration: none;">
+                <button style="padding: 10px 20px; background-color: #0077bb; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                    View on GitHub
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+        <div id="hire-me" class="content">
+            <h2>Hire Me</h2>
+            <p>If you are interested in hiring me, please contact me at <a href="mailto:shivani.ch123shiva@gmail.com">shivani.ch123shiva@gmail.com</a>.</p>
+        </div>
+
+        <div id="resume" class="content">
+            <h2>Resume</h2>
+            <p>Click below to download my resume:</p>
+            <a href="https://drive.google.com/uc?export=download&id=1SvTfYrW75byzgvLIlJ_Y0gN65DoNOr3p" download="Shivani_Chenumalla_Resume.pdf">
+                <button style="padding: 10px 20px; background-color: #0077bb; color: white; border: none; border-radius: 5px; cursor: pointer;">Download My Resume</button>
+            </a>
+        </div>
+
+        <div id="education" class="content">
+            <h2>Education</h2>
+            <li>Undergrad: Bachelor of Technology in Computer Science, SR University(cgpa:9.25)</li>
+            <li>senior secondary: resonance junior college(grade:96%)</li>
+            <li>metriculation: kendriya vidyalaya(grade:81.4%(CBSE))</li>
+        </div>
+
+        <div id="skills" class="content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Backend Development (Node.js, Python)</li>
+                <li>Machine Learning (TensorFlow, PyTorch)</li>
+                <li>Database Management (MySQL, MongoDB)</li>
+                <li>Version Control (Git, GitHub)</li>
+            </ul>
+        </div>
+
+        <div id="certifications" class="content">
+    <h2>Certifications</h2>
+    <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1vU7F0PtaLXSk3rEfcw427IgHtGbvo1B0/view?usp=sharing" target="_blank">Power BI Job Simulation by PwC Switzerland</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1vU6W9wcgkJBNHO1ijF0-OHBEqstd_kws/view?usp=sharing">AICTE-google android developer</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1vOJBZICGyQd8FCzg109_H6cHlou2qWPD/view?usp=sharing" target="_blank">NPTEL-theory of computation</a>
+        </li>
+    </ul>
+</div>
+
+        <div id="contact-me" class="content">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:shivani.ch123shiva@gmail.com">shivani.ch123shiva@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919502825520">Click to message me on WhatsApp</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/shivani-chenumalla-637456267/" target="_blank">Visit my LinkedIn Profile</a></p>
+</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Shivani Chenumalla. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showContent(tabId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach((content) => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
